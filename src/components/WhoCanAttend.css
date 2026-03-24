@@ -1,0 +1,124 @@
+/* ===================== WHO CAN ATTEND ===================== */
+.who-attend {
+  background: var(--bg-white);
+  position: relative;
+}
+
+.who-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.who-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--bg-section-alt);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.who-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gradient-accent);
+  border-radius: 3px 0 0 3px;
+  transform: scaleY(0);
+  transition: transform var(--transition-smooth);
+}
+
+.who-card:hover {
+  border-color: rgba(67, 56, 202, 0.25);
+  background: rgba(67, 56, 202, 0.04);
+  transform: translateX(6px);
+  box-shadow: var(--shadow-md);
+}
+
+.who-card:hover::before {
+  transform: scaleY(1);
+}
+
+.who-card__check {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(124, 58, 237, 0.15));
+  border: 1.5px solid rgba(0, 212, 255, 0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.who-card__check svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--primary-700);
+}
+
+.who-card__emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.who-card__body {
+  flex: 1;
+}
+
+.who-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-900);
+  margin-bottom: 6px;
+}
+
+.who-card__desc {
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.65;
+}
+
+.who-attend__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 32px;
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: var(--radius-xl);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.who-attend__cta p {
+  color: #374151;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .who-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .who-attend__cta {
+    flex-direction: column;
+    text-align: center;
+  }
+}

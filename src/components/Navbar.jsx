@@ -1,39 +1,129 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react'
+import { useNavigate, useLocation, Link } from 'react-router-dom'
+import './Navbar.css'
 
-function Navbar() {
-  const links = [
-    { name: "About", href: "#about" },
-    { name: "Details", href: "#details" },
-    { name: "Speakers", href: "#speakers" },
-    { name: "Contact", href: "#resources" },
-  ];
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const navLinks = [
+    { label: 'About', href: '#about' },
+    { label: 'Details', href: '#details' },
+    { label: 'Speakers', href: '#speakers' },
+    { label: 'Contact', href: '#contact' },
+    { label: 'Committees', href: '/committees', isPage: true },
+  ]
+
+  const handleNavClick = (e, link) => {
+    e.preventDefault()
+    setMenuOpen(false)
+    
+    if (link.isPage) {
+      navigate(link.href)
+      window.scrollTo(0, 0)
+      return
+    }
+
+    if (location.pathname !== '/') {
+      navigate('/' + link.href)
+      setTimeout(() => {
+        const target = document.querySelector(link.href)
+        if (target) {
+          const navHeight = 72
+          const top = target.getBoundingClientRect().top + window.scrollY - navHeight
+          window.scrollTo({ top, behavior: 'smooth' })
+        }
+      }, 100)
+    } else {
+      const target = document.querySelector(link.href)
+      if (target) {
+        const navHeight = 72
+        const top = target.getBoundingClientRect().top + window.scrollY - navHeight
+        window.scrollTo({ top, behavior: 'smooth' })
+      }
+    }
+  }
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-100">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+      <div className="navbar__inner">
+        {/* Logo */}
+        <Link to="/" className="navbar__logo" onClick={() => { setMenuOpen(false); window.scrollTo(0, 0); }}>
+          <div className="navbar__logo-icon">
+            <span>IC</span>
+          </div>
+          <div className="navbar__logo-text">
+            <span className="navbar__logo-name">NSRIT</span>
+            <span className="navbar__logo-sub">IC 2026</span>
+          </div>
+        </Link>
 
-        <a href="#" className="text-xl font-extrabold text-blue-900 tracking-tighter">
-          NSRIT<span className="text-blue-500"></span>
-        </a>
-
-        <div className="hidden md:flex gap-8 font-medium text-sm text-gray-600">
-          {links.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
-              className="hover:text-blue-600 transition-colors"
-            >
-              {link.name}
-            </a>
+        {/* Desktop Links */}
+        <ul className="navbar__links">
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                className="navbar__link"
+                onClick={(e) => handleNavClick(e, link)}
+              >
+                {link.label}
+              </a>
+            </li>
           ))}
+        </ul>
+
+        {/* CTA */}
+        <div className="navbar__actions">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdU1AmMhyAAZZFLbex2mYCyQ_GMEMLTv-IbObamrGXTC5alnQ/viewform?usp=dialog"
+            className="btn btn-primary navbar__cta"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Register Now
+          </a>
         </div>
 
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">
-          Register
+        {/* Mobile Hamburger */}
+        <button
+          className={`navbar__hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
+
+      {/* Mobile Menu */}
+      <div className={`navbar__mobile ${menuOpen ? 'navbar__mobile--open' : ''}`}>
+        {navLinks.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            className="navbar__mobile-link"
+            onClick={(e) => handleNavClick(e, link)}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdU1AmMhyAAZZFLbex2mYCyQ_GMEMLTv-IbObamrGXTC5alnQ/viewform?usp=dialog" className="btn btn-primary navbar__mobile-cta" target="_blank" rel="noreferrer">
+          Register Now
+        </a>
+      </div>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

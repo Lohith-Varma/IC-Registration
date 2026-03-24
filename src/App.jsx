@@ -1,43 +1,45 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Speakers from "./components/Speakers";
-import Details from "./components/Details";
-import Resources from "./components/Resources";
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import About from './components/About'
+import AboutCollege from './components/AboutCollege'
+import WhyAttend from './components/WhyAttend'
+import WhoCanAttend from './components/WhoCanAttend'
+import Dates from './components/Dates'
+import Speakers from './components/Speakers'
+import Submission from './components/Submission'
+import Contact from './components/Contact'
+import Committees from './components/Committees'
+import Footer from './components/Footer'
+import './App.css'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* 1. Add the Navbar here */}
+    <>
       <Navbar />
-
-      {/* Add some top padding so the Hero isn't hidden behind the fixed Navbar */}
-      <div className="pt-16">
-        <Hero />
-      </div>
-
-      {/* 2. Wrap components in divs with matching IDs for the Navbar to target */}
-      <div id="about" className="scroll-mt-16">
-        <About />
-      </div>
-      
-      <div id="details" className="scroll-mt-16">
-        <Details />
-      </div>
-      
-      <div id="speakers" className="scroll-mt-16">
-        <Speakers />
-      </div>
-      
-      <div id="resources" className="scroll-mt-16">
-        <Resources />
-      </div>
-
-      <footer className="bg-black text-gray-500 py-6 text-center text-xs">
-        © 2026 International Conference | All Rights Reserved | Managed by NSRIT
-      </footer>
-    </div>
-  );
+      <Routes>
+        <Route path="/" element={
+          <main>
+            <Hero />
+            <About />
+            <AboutCollege />
+            <WhyAttend />
+            <WhoCanAttend />
+            <Dates />
+            <Speakers />
+            <Submission />
+            <Contact />
+          </main>
+        } />
+        <Route path="/committees" element={
+          <main className="pt-24 min-h-screen">
+            <Committees />
+          </main>
+        } />
+      </Routes>
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App

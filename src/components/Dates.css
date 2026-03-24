@@ -1,0 +1,154 @@
+/* ===================== DATES ===================== */
+.dates {
+  background: var(--bg-section-alt);
+  position: relative;
+  overflow: hidden;
+}
+
+.dates__orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.07) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.dates .container {
+  position: relative;
+  z-index: 1;
+}
+
+.dates__timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Date Card */
+.date-card {
+  display: flex;
+  gap: 16px;
+  background: var(--bg-white);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  transition: var(--transition-smooth);
+  cursor: default;
+  box-shadow: var(--shadow-sm);
+}
+
+.date-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(67, 56, 202, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.date-card--main {
+  background: linear-gradient(135deg, rgba(67, 56, 202, 0.08), rgba(99, 102, 241, 0.04));
+  border-color: rgba(99, 102, 241, 0.3);
+  grid-column: span 1;
+}
+
+.date-card--main:hover {
+  border-color: rgba(99, 102, 241, 0.55);
+  box-shadow: 0 16px 48px rgba(67, 56, 202, 0.15);
+}
+
+/* Connector (left side decorative) */
+.date-card__connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-top: 4px;
+  flex-shrink: 0;
+}
+
+.date-card__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--primary-600);
+  border: 2px solid var(--bg-section-alt);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+  flex-shrink: 0;
+}
+
+.date-card--main .date-card__dot {
+  background: var(--purple-vivid);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.4);
+  width: 18px;
+  height: 18px;
+}
+
+.date-card__line {
+  display: none; /* Hidden in grid layout */
+}
+
+/* Content */
+.date-card__content {
+  flex: 1;
+}
+
+.date-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.date-card__emoji {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.date-card__date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-700);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(67, 56, 202, 0.08);
+  border: 1px solid rgba(67, 56, 202, 0.2);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.date-card--main .date-card__date {
+  color: var(--purple-vivid);
+  background: rgba(124, 58, 237, 0.08);
+  border-color: rgba(124, 58, 237, 0.25);
+}
+
+.date-card__label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-900);
+  margin-bottom: 8px;
+}
+
+.date-card__desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .dates__timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .dates__timeline {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+}

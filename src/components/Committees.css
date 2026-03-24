@@ -1,0 +1,119 @@
+.committees {
+  padding: 5rem 2rem;
+  background-color: var(--color-background-alt, #f9fafb);
+  display: flex;
+  justify-content: center;
+}
+
+.committees__container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.committees__title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--color-text-primary, #111827);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.committees__title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-primary, #3b82f6);
+  border-radius: 2px;
+}
+
+.committees__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.committee-card {
+  background: var(--color-background-primary, #ffffff);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border, #e5e7eb);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.committee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.committee-card__title {
+  font-size: 1.25rem;
+  color: var(--color-primary, #3b82f6);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-primary-light, #bfdbfe);
+  font-weight: 600;
+}
+
+.committee-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.committee-card__item {
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid transparent;
+  padding-left: 0.75rem;
+  transition: border-color 0.2s ease;
+}
+
+.committee-card__item:hover {
+  border-left-color: var(--color-primary, #3b82f6);
+}
+
+.committee-card__role {
+  font-weight: 600;
+  color: var(--color-text-secondary, #4b5563);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.committee-card__name {
+  font-weight: 600;
+  color: var(--color-text-primary, #111827);
+  font-size: 1.05rem;
+}
+
+.committee-card__desc {
+  color: var(--color-text-tertiary, #6b7280);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .committees {
+    padding: 3rem 1rem;
+  }
+  
+  .committees__title {
+    font-size: 2rem;
+  }
+  
+  .committee-card {
+    padding: 1.5rem;
+  }
+}
