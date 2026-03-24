@@ -26,7 +26,7 @@ const WhoCanAttend = () => {
           <div className="section-tag">Attendees</div>
           <h2 className="section-title">Who Can Attend?</h2>
           <p className="section-subtitle">
-            IC 2026 welcomes participants from all backgrounds in academia, research, and industry.
+            NSRIT-IC 2026 welcomes participants from all backgrounds in academia, research, and industry.
           </p>
         </div>
 

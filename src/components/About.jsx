@@ -24,7 +24,7 @@ const About = () => {
           <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
         </svg>
       ),
-      text: 'Facilitate meaningful networking between students, faculty, and global experts from industry.',
+      text: 'Facilitate meaningful networking between scholars, faculty members, and experts from industry in global level.',
     },
   ]
 
@@ -45,7 +45,7 @@ const About = () => {
           <div className="about__content">
             <div className="about__text-block">
               <p className="about__description">
-                International Conference on <strong>Novel Strategies in Research, Innovation and Technology</strong> (IC-NSRIT -2026) aims to provide a global platform for researchers, academicians, industry professionals, and students to exchange knowledge on cutting-edge technologies and current industrial trends. The conference focuses on innovative, creative, and practical solutions that contribute to societal development, industrial growth, and employment generation.
+                International Conference on <strong>Novel Strategies in Research, Innovation and Technology</strong> (IC-NSRIT-2026) aims to provide a global platform for researchers, academicians, industry professionals, and students to exchange knowledge on cutting-edge technologies and current industrial trends. The conference focuses on innovative, creative, and practical solutions that contribute to societal development, industrial growth, and employment generation.
               </p>
               <p className="about__description">
                 To ensure multidisciplinary participation and meaningful technical discussions, the conference is structured into four thematic tracks, covering major engineering and management domains. These tracks emphasize industry relevance, applied research, sustainability, and emerging employment-oriented technologies.

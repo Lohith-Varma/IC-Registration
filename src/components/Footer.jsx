@@ -115,7 +115,7 @@ const Footer = () => {
                 <span className="footer__info-icon">📅</span>
                 <div>
                   <strong>Dates</strong>
-                  <p>20–23 February 2026</p>
+                  <p>29-30 May 2026</p>
                 </div>
               </li>
               <li>
@@ -129,7 +129,7 @@ const Footer = () => {
                 <span className="footer__info-icon">✉️</span>
                 <div>
                   <strong>Contact</strong>
-                  <p>ic2026@nsrit.edu.in</p>
+                  <p>ic.nsrit@nsrit.edu.in</p>
                 </div>
               </li>
             </ul>
@@ -141,7 +141,7 @@ const Footer = () => {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p className="footer__copyright">
-            © 2026 International Conference on Future Tech · All Rights Reserved · Managed by <strong>NSRIT</strong>
+            © 2026 International Conference on Novel Strategies in Research, Innovation and Technology · All Rights Reserved · Managed by <strong>NSRIT</strong>
           </p>
           <div className="footer__bottom-links">
             <a href="#" className="footer__bottom-link" onClick={(e) => e.preventDefault()}>Privacy Policy</a>

@@ -36,9 +36,9 @@ const Hero = () => {
 
         {/* Headline */}
         <h1 className="hero__title">
-          International<br />
-          <span className="hero__title-gradient">Tech Conference</span><br />
-          2026
+          International Conference on <br />
+          <span className="hero__title-gradient">Novel Strategies in Research, Innovation and Technology</span><br />
+          (IC-NSRIT) 2026
         </h1>
 
         <p className="hero__subtitle">

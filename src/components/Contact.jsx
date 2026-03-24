@@ -9,8 +9,8 @@ const Contact = () => {
         </svg>
       ),
       label: 'Email Us',
-      value: 'ic2026@nsrit.edu.in',
-      href: 'mailto:ic2026@nsrit.edu.in',
+      value: 'ic.nsrit@nsrit.edu.in',
+      href: 'mailto:ic.nsrit@nsrit.edu.in',
       color: '#4338ca',
     },
     {
@@ -20,8 +20,8 @@ const Contact = () => {
         </svg>
       ),
       label: 'Call Us',
-      value: '+91 XXXXXXXXXXX',
-      href: 'tel:+91XXXXXXXXXXX',
+      value: '+91 77299 90444',
+      href: 'tel:+917729990444',
       color: '#7c3aed',
     },
     {
@@ -30,7 +30,7 @@ const Contact = () => {
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
         </svg>
       ),
-      label: 'Venue',
+      label: 'Hosted by',
       value: 'Dept. of CSE, NSRIT, Visakhapatnam',
       href: 'https://maps.google.com/?q=NSRIT+Visakhapatnam',
       color: '#0891b2',

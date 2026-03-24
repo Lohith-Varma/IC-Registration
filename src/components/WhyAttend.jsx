@@ -7,7 +7,7 @@ const features = [
         <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
       </svg>
     ),
-    title: 'Global Industry Leaders',
+    title: 'Academia Industry Connects',
     desc: 'Gain exclusive insights from keynote speakers representing top universities, tech giants, and research labs worldwide.',
     color: '#00d4ff',
   },
@@ -28,7 +28,7 @@ const features = [
       </svg>
     ),
     title: 'Research Publication',
-    desc: 'Selected papers will be featured in Scopus-indexed proceedings, giving your research international visibility and reach.',
+    desc: 'All registered papers will be featured in Scopus-indexed proceedings, giving your research international visibility and reach.',
     color: '#7c3aed',
   },
 ]
@@ -41,7 +41,7 @@ const WhyAttend = () => {
           <div className="section-tag">Why Attend</div>
           <h2 className="section-title">What You'll Gain</h2>
           <p className="section-subtitle">
-            IC 2026 delivers a unique blend of academic depth and industry-facing opportunities.
+            NSRIT-IC 2026 delivers a unique blend of academic depth and industry-facing opportunities.
           </p>
         </div>
 

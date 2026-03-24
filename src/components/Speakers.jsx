@@ -2,38 +2,38 @@ import './Speakers.css'
 
 const speakers = [
   {
-    name: 'Dr. John Smith',
-    affiliation: 'MIT, USA',
-    topic: 'Quantum Computing',
-    topicTag: 'Quantum Tech',
-    initials: 'JS',
+    name: 'Speaker 1',
+    // affiliation: 'MIT, USA',
+    // topic: 'Quantum Computing',
+    // topicTag: 'Quantum Tech',
+    initials: 'S 1',
     color: '#00d4ff',
     bg: 'linear-gradient(135deg, #0d2b40 0%, #0a0620 100%)',
   },
   {
-    name: 'Prof. Rajesh Kumar',
-    affiliation: 'IIT Bombay, India',
-    topic: 'Sustainable Energy',
-    topicTag: 'Green Tech',
-    initials: 'RK',
+    name: 'Speaker 2',
+    // affiliation: 'IIT Bombay, India',
+    // topic: 'Sustainable Energy',
+    // topicTag: 'Green Tech',
+    initials: 'S 2',
     color: '#a855f7',
     bg: 'linear-gradient(135deg, #1a0d35 0%, #0a0620 100%)',
   },
   {
-    name: 'Elena Rodriguez',
-    affiliation: 'Google AI, USA',
-    topic: 'Ethical Machine Learning',
-    topicTag: 'AI / Ethics',
-    initials: 'ER',
+    name: 'Speaker 3',
+    // affiliation: 'Google AI, USA',
+    // topic: 'Ethical Machine Learning',
+    // topicTag: 'AI / Ethics',
+    initials: 'S 3',
     color: '#7c3aed',
     bg: 'linear-gradient(135deg, #1a1040 0%, #0a0620 100%)',
   },
   {
-    name: 'Dr. Wei Zhang',
-    affiliation: 'Tsinghua University',
-    topic: 'Neural Architecture',
-    topicTag: 'Deep Learning',
-    initials: 'WZ',
+    name: 'Spreaker 4',
+    // affiliation: 'Tsinghua University',
+    // topic: 'Neural Architecture',
+    // topicTag: 'Deep Learning',
+    initials: 'S 4',
     color: '#06b6d4',
     bg: 'linear-gradient(135deg, #082535 0%, #0a0620 100%)',
   },
@@ -75,7 +75,7 @@ const Speakers = () => {
                   {sp.affiliation}
                 </p>
                 <div className="speaker-card__divider"></div>
-                <p className="speaker-card__topic-label">Speaking on</p>
+                {/* <p className="speaker-card__topic-label">Speaking on</p> */}
                 <p className="speaker-card__topic">{sp.topic}</p>
               </div>
             </div>
