@@ -83,7 +83,7 @@ const Hero = () => {
             </div>
             <div>
               <span className="hero__card-label">Date</span>
-              <p className="hero__card-value">29–30 May 2026</p>
+              <p className="hero__card-value">13–14 November 2026</p>
             </div>
           </div>
 
@@ -134,4 +134,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero;

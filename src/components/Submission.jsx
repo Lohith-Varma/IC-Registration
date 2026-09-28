@@ -13,7 +13,7 @@ const Submission = () => {
       <div className="container">
         <div className="section-header">
           <div className="section-tag">Paper Submission</div>
-          <h2 className="section-title">Submit Your Research</h2>
+          <h2 className="section-title">Submit Your Research Article</h2>
           <p className="section-subtitle">
             Share your research with the global academic community. Follow our guidelines for a smooth submission process.
           </p>
@@ -54,19 +54,22 @@ const Submission = () => {
           </div>
 
           <div className="submission__actions">
-            <a href="#" className="btn btn-outline submission__btn-download" onClick={(e) => e.preventDefault()}>
+            <button type="button" className="btn btn-outline submission__btn-download" disabled aria-describedby="template-status">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 16s0 2 2 2h10s2 0 2-2"/><path d="M10 3v10m0 0l-3-3m3 3l3-3"/>
               </svg>
-              Download Template (.docx)
-            </a>
+              Template Coming Soon
+            </button>
+            <p className="submission__availability" id="template-status">
+              The official DOCX file has not yet been added.
+            </p>
           </div>
         </div>
 
         {/* Register CTA */}
         <div className="submission__register">
           <div className="submission__register-content">
-            <h3>Ready to Register for IC 2026?</h3>
+            <h3>Ready to Register for IC NSRIT - 2026?</h3>
             <p>Secure your spot at the most anticipated tech conference of 2026.</p>
           </div>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdU1AmMhyAAZZFLbex2mYCyQ_GMEMLTv-IbObamrGXTC5alnQ/viewform?usp=dialog" className="btn btn-accent" target="_blank" rel="noreferrer">

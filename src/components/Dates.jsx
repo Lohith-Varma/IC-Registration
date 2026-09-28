@@ -2,24 +2,24 @@ import './Dates.css'
 
 const dates = [
   {
-    date: 'April 30',
-    label: 'Abstract Submission',
-    desc: 'Submit your extended abstract for initial review by the technical committee.',
+    date: '1 September 2026',
+    label: 'Full-Length Paper Submission',
+    desc: 'Submit your completed paper for review by the technical committee.',
     icon: '📝',
     status: 'upcoming',
   },
   {
-    date: 'May 15',
-    label: 'Full Paper Acceptance',
-    desc: 'Submit completed papers following the author guidelines and template.',
+    date: '1 October 2026',
+    label: 'Acceptance Notification',
+    desc: 'Authors will be notified of the paper acceptance decision.',
     icon: '📄',
     status: 'upcoming',
   },
   {
-    date: 'May 25',
-    label: 'Early Bird Ends',
-    desc: 'Register early to avail discounted fees for conference attendance.',
-    icon: '🐦',
+    date: '10 October 2026',
+    label: 'Registration Deadline',
+    desc: 'Complete conference registration by this date.',
+    icon: '✅',
     status: 'upcoming',
   },
   // {
@@ -37,8 +37,8 @@ const dates = [
   //   status: 'upcoming',
   // },
   {
-    date: 'May 29',
-    label: 'Conference Begins',
+    date: '13–14 November 2026',
+    label: 'Conference Dates',
     desc: 'Join us at NSRIT, Visakhapatnam for 2 days of transformative sessions.',
     icon: '🚀',
     status: 'main',

@@ -29,7 +29,7 @@ const speakers = [
     bg: 'linear-gradient(135deg, #1a1040 0%, #0a0620 100%)',
   },
   {
-    name: 'Spreaker 4',
+    name: 'Speaker 4',
     // affiliation: 'Tsinghua University',
     // topic: 'Neural Architecture',
     // topicTag: 'Deep Learning',
@@ -62,21 +62,26 @@ const Speakers = () => {
                   <span className="speaker-card__initials">{sp.initials}</span>
                   <div className="speaker-card__avatar-glow"></div>
                 </div>
-                <div className="speaker-card__topic-badge">{sp.topicTag}</div>
+                {sp.topicTag && <div className="speaker-card__topic-badge">{sp.topicTag}</div>}
               </div>
 
               {/* Info */}
               <div className="speaker-card__info">
                 <h3 className="speaker-card__name">{sp.name}</h3>
-                <p className="speaker-card__affiliation">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M8 1.5L1 5l7 3.5L15 5 8 1.5z"/><path d="M1 5v5"/><path d="M5 6.5v4.5c0 1 1.343 2 3 2s3-1 3-2V6.5"/>
-                  </svg>
-                  {sp.affiliation}
-                </p>
-                <div className="speaker-card__divider"></div>
-                {/* <p className="speaker-card__topic-label">Speaking on</p> */}
-                <p className="speaker-card__topic">{sp.topic}</p>
+                {sp.affiliation && (
+                  <p className="speaker-card__affiliation">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M8 1.5L1 5l7 3.5L15 5 8 1.5z"/><path d="M1 5v5"/><path d="M5 6.5v4.5c0 1 1.343 2 3 2s3-1 3-2V6.5"/>
+                    </svg>
+                    {sp.affiliation}
+                  </p>
+                )}
+                {sp.topic && (
+                  <>
+                    <div className="speaker-card__divider"></div>
+                    <p className="speaker-card__topic">{sp.topic}</p>
+                  </>
+                )}
               </div>
             </div>
           ))}

@@ -49,7 +49,7 @@ const WhoCanAttend = () => {
 
         {/* Join CTA */}
         <div className="who-attend__cta">
-          <p>Ready to be part of IC 2026?</p>
+          <p>Ready to be part of IC NSRIT - 2026?</p>
           <a href="#submission" className="btn btn-primary" onClick={(e) => {
             e.preventDefault()
             const el = document.querySelector('#submission')

@@ -86,8 +86,24 @@ body {
   background-color: var(--bg-page);
   color: var(--text-primary);
   line-height: 1.7;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+#root,
+main,
+section,
+.container {
+  min-width: 0;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
 }
 
 /* ---------- Typography ---------- */
@@ -177,6 +193,7 @@ img {
   position: relative;
   overflow: hidden;
   letter-spacing: 0.02em;
+  min-height: 48px;
 }
 
 .btn::before {
@@ -226,6 +243,19 @@ img {
 .btn-accent:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 40px rgba(0, 212, 255, 0.5);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent-300);
+  outline-offset: 3px;
+}
+
+.page-main--committees {
+  min-height: 100vh;
+  padding-top: 72px;
 }
 
 /* ---------- Glow Orbs (decorative) ---------- */
@@ -282,5 +312,20 @@ img {
 @media (max-width: 480px) {
   .section {
     padding: 48px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

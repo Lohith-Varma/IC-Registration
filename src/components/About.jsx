@@ -45,9 +45,15 @@ const About = () => {
           <div className="about__content">
             <div className="about__text-block">
               <p className="about__description">
-                International Conference on <strong>Novel Strategies in Research, Innovation and Technology</strong> (IC-NSRIT-2026) aims to provide a global platform for researchers, academicians, industry professionals, and students to exchange knowledge on cutting-edge technologies and current industrial trends. The conference focuses on innovative, creative, and practical solutions that contribute to societal development, industrial growth, and employment generation.
+                The <strong>International Conference on Novel Strategies in Research, Innovation, and Technology</strong> (IC-NSRIT 2026) brings together researchers, academicians, industry professionals, and students.
               </p>
+
+              <h3 className="about__theme-title">Brief Note on the Proposed International Conference</h3>
+
               <p className="about__description">
+                IC-NSRIT 2026 aims to provide a global platform for participants to exchange knowledge on cutting-edge technologies and current industrial trends. The conference focuses on innovative, creative, and practical solutions that contribute to societal development, industrial growth, and employment generation.
+                <br/>
+                <br/>
                 To ensure multidisciplinary participation and meaningful technical discussions, the conference is structured into four thematic tracks, covering major engineering and management domains. These tracks emphasize industry relevance, applied research, sustainability, and emerging employment-oriented technologies.
               </p>
             </div>
@@ -107,7 +113,7 @@ const About = () => {
                 <span>Nations</span>
               </div> */}
               <div className="about__badge about__badge--2">
-                <strong>29-30 May 2026</strong>
+                <strong>13-14 Nov 2026</strong>
                 <span>Visakhapatnam</span>
               </div>
             </div>

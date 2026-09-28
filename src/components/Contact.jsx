@@ -1,6 +1,20 @@
 import './Contact.css'
 
 const Contact = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+    const subject = formData.get('subject')
+    const body = [
+      `Name: ${formData.get('name')}`,
+      `Email: ${formData.get('email')}`,
+      '',
+      formData.get('message'),
+    ].join('\n')
+
+    window.location.href = `mailto:ic.nsrit@nsrit.edu.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  }
+
   const contactItems = [
     {
       icon: (
@@ -31,7 +45,7 @@ const Contact = () => {
         </svg>
       ),
       label: 'Hosted by',
-      value: 'Dept. of CSE, NSRIT, Visakhapatnam',
+      value: 'NSRIT, Visakhapatnam',
       href: 'https://maps.google.com/?q=NSRIT+Visakhapatnam',
       color: '#0891b2',
     },
@@ -69,28 +83,29 @@ const Contact = () => {
 
         {/* Contact form */}
         <div className="contact__form-wrap">
-          <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="contact-form" onSubmit={handleSubmit}>
             <h3 className="contact-form__title">Send a Message</h3>
+            <p className="contact-form__note">Submitting opens a pre-filled draft in your email app.</p>
             <div className="contact-form__row">
               <div className="contact-form__group">
                 <label htmlFor="cf-name">Full Name</label>
-                <input type="text" id="cf-name" placeholder="Your name" />
+                <input type="text" id="cf-name" name="name" autoComplete="name" placeholder="Your name" required />
               </div>
               <div className="contact-form__group">
                 <label htmlFor="cf-email">Email</label>
-                <input type="email" id="cf-email" placeholder="your@email.com" />
+                <input type="email" id="cf-email" name="email" autoComplete="email" placeholder="your@email.com" required />
               </div>
             </div>
             <div className="contact-form__group">
               <label htmlFor="cf-subject">Subject</label>
-              <input type="text" id="cf-subject" placeholder="Regarding IC 2026..." />
+              <input type="text" id="cf-subject" name="subject" placeholder="Regarding IC 2026..." required />
             </div>
             <div className="contact-form__group">
               <label htmlFor="cf-message">Message</label>
-              <textarea id="cf-message" rows="5" placeholder="Your message here..."></textarea>
+              <textarea id="cf-message" name="message" rows="5" placeholder="Your message here..." required></textarea>
             </div>
             <button type="submit" className="btn btn-primary contact-form__submit">
-              Send Message
+              Open Email Draft
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 10h14M9 4l6 6-6 6"/>
               </svg>

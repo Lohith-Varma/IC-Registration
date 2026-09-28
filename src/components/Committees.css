@@ -35,7 +35,7 @@
 
 .committees__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 2rem;
 }
 
@@ -96,6 +96,7 @@
   font-weight: 600;
   color: var(--color-text-primary, #111827);
   font-size: 1.05rem;
+  overflow-wrap: anywhere;
 }
 
 .committee-card__desc {
@@ -115,5 +116,20 @@
   
   .committee-card {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .committees {
+    padding: 3rem 1rem;
+  }
+
+  .committees__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .committee-card {
+    padding: 1.25rem;
   }
 }

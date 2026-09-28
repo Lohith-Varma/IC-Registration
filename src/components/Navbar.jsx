@@ -8,12 +8,24 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60)
+    handleScroll()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const navigate = useNavigate()
   const location = useLocation()
+
+  useEffect(() => {
+    if (!menuOpen) return undefined
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [menuOpen])
 
   const navLinks = [
     { label: 'About', href: '#about' },
@@ -35,14 +47,6 @@ const Navbar = () => {
 
     if (location.pathname !== '/') {
       navigate('/' + link.href)
-      setTimeout(() => {
-        const target = document.querySelector(link.href)
-        if (target) {
-          const navHeight = 72
-          const top = target.getBoundingClientRect().top + window.scrollY - navHeight
-          window.scrollTo({ top, behavior: 'smooth' })
-        }
-      }, 100)
     } else {
       const target = document.querySelector(link.href)
       if (target) {
@@ -53,8 +57,10 @@ const Navbar = () => {
     }
   }
 
+  const solidNavbar = scrolled || location.pathname !== '/'
+
   return (
-    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+    <nav className={`navbar ${solidNavbar ? 'navbar--scrolled' : ''}`} aria-label="Primary navigation">
       <div className="navbar__inner">
         {/* Logo */}
         <Link to="/" className="navbar__logo" onClick={() => { setMenuOpen(false); window.scrollTo(0, 0); }}>
@@ -98,7 +104,9 @@ const Navbar = () => {
         <button
           className={`navbar__hamburger ${menuOpen ? 'open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-controls="mobile-navigation"
+          aria-expanded={menuOpen}
         >
           <span></span>
           <span></span>
@@ -107,7 +115,11 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`navbar__mobile ${menuOpen ? 'navbar__mobile--open' : ''}`}>
+      <div
+        id="mobile-navigation"
+        className={`navbar__mobile ${menuOpen ? 'navbar__mobile--open' : ''}`}
+        aria-hidden={!menuOpen}
+      >
         {navLinks.map((link) => (
           <a
             key={link.label}
